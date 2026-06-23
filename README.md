@@ -83,31 +83,7 @@ Administrators can monitor platform statistics including users, services, provid
 
 ## Project Workflow
 
-Customer Registration/Login
-
-↓
-
-Browse Services
-
-↓
-
-Submit Service Request
-
-↓
-
-Provider Accepts Request
-
-↓
-
-Project In Progress
-
-↓
-
-Project Completed
-
-↓
-
-Customer Reviews Provider
+<img width="1024" height="1536" alt="ChatGPT Image Jun 23, 2026, 05_09_37 PM" src="https://github.com/user-attachments/assets/02f9d4bb-b8fe-4a38-9b6e-52ba89a26ead" />
 
 ## Installation Guide
 
