@@ -1,10 +1,20 @@
-# Multi-Vendor Marketplace Platform
+# 🏪 Multi-Vendor Marketplace Platform
 
-A full-stack marketplace platform that connects customers with service providers. Customers can browse services, submit project requests, track project progress, and leave reviews, while providers manage services, handle client requests, and maintain professional profiles. Administrators can monitor platform-wide statistics through a dedicated dashboard.
+A full-stack marketplace platform connecting customers with service providers. Customers browse services, submit project requests, and leave reviews. Providers manage services and handle client projects. Administrators monitor platform statistics through a dedicated dashboard.
+
+---
+
+## 🌐 Live Demo
+**[https://multi-vendor-market-place.onrender.com](https://multi-vendor-market-place.onrender.com/)**
+
+## 📚 GitHub Repository
+**[https://github.com/Uzairkahn/Multi-Vendor-Market-place](https://github.com/Uzairkahn/Multi-Vendor-Market-place)**
+
+---
 
 ## Features
 
-### Customer Features
+### ✨ Customer Features
 
 - User Registration & Login
 - Browse Available Services
@@ -43,34 +53,61 @@ A full-stack marketplace platform that connects customers with service providers
 - Authorization Middleware
 - Secure Password Hashing
 
-## Technology Stack
+## 🎨 Screenshots
+
+### 🏠 Home Screen
+![Home Screen](Screenshots/HomeScreen.png)
+
+### 🔐 Login Screen
+![Login Screen](Screenshots/LoginScreen.png)
+
+### 📝 Sign Up Screen
+![Sign Up Screen](Screenshots/SignUp%20Screen.png)
+
+### 🛍️ Services Dashboard
+![Services Dashboard](Screenshots/sERVICESdASHBOARD.png)
+
+### 👤 Customer Dashboard
+![Customer Dashboard](Screenshots/CustomerDashboard.png)
+
+### 🔧 Provider Dashboard
+![Provider Dashboard](Screenshots/ProviderDasboard.png)
+
+### 📊 Admin Dashboard
+![Admin Dashboard](Screenshots/AdminDashboard.png)
+
+---
+
+## 🛠️ Technology Stack
 
 ### Frontend
-
-- HTML5
-- CSS3
-- Bootstrap 5
-- JavaScript (ES6)
+- **HTML5** — Semantic markup
+- **CSS3** — Modern styling with animations
+- **JavaScript (ES6)** — Dynamic interactions and validation
+- **Bootstrap 5** — Responsive UI framework
+- **Chart.js** — Dashboard analytics & visualization
 
 ### Backend
-
-- Node.js
-- Express.js
+- **Node.js** — JavaScript runtime
+- **Express.js** — Web framework
+- **Mongoose** — MongoDB object modeling
 
 ### Database
-
-- MongoDB Atlas
-- Mongoose ODM
-
-### Cloud Services
-
-- Cloudinary (Image Upload & Storage)
+- **MongoDB Atlas** — Cloud NoSQL database
 
 ### Authentication
+- **JWT (JSON Web Tokens)** — Stateless authentication
+- **bcryptjs** — Password hashing
 
-- JSON Web Tokens (JWT)
+### Cloud Services
+- **Cloudinary** — Image upload & storage
 
-## System Roles
+### Deployment
+- **Render** — Cloud hosting platform
+
+---
+
+## 🎯 System Roles
 
 ### Customer
 Customers can browse services, request projects, track progress, and submit reviews.
@@ -81,113 +118,139 @@ Providers can manage their services, accept client requests, update project stat
 ### Admin
 Administrators can monitor platform statistics including users, services, providers, and project requests.
 
-## Project Workflow
+---
 
+## 🔄 Project Workflow
+
+```
 Customer Registration/Login
-
-↓
-
+         ↓
 Browse Services
-
-↓
-
+         ↓
 Submit Service Request
-
-↓
-
+         ↓
 Provider Accepts Request
-
-↓
-
+         ↓
 Project In Progress
-
-↓
-
+         ↓
 Project Completed
-
-↓
-
+         ↓
 Customer Reviews Provider
-
-## Installation Guide
-
-### Clone Repository
-
-```bash
-git clone <repository-url>
-cd FSWD-1-Marketplace
 ```
 
-### Install Backend Dependencies
+---
+
+## 📂 Project Structure
+
+```
+FSWD-1-Marketplace/
+│
+├── backend/
+│   ├── config/
+│   │   ├── db.js
+│   │   └── cloudinary.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── serviceController.js
+│   │   ├── requestController.js
+│   │   ├── reviewController.js
+│   │   ├── providerProfileController.js
+│   │   └── adminController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── roles.js
+│   │   └── upload.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Service.js
+│   │   ├── Request.js
+│   │   ├── Review.js
+│   │   └── ProviderProfile.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── services.js
+│   │   ├── requests.js
+│   │   ├── reviews.js
+│   │   ├── admin.js
+│   │   └── providerProfiles.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+│
+├── frontend/
+│   ├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   ├── session.js
+│   │   ├── services.js
+│   │   └── dashboard.js
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── services.html
+│   ├── customer-dashboard.html
+│   ├── provider-dashboard.html
+│   └── admin-dashboard.html
+│
+├── Screenshots/
+├── README.md
+├── .gitignore
+└── package.json
+```
+
+---
+
+## � Installation Guide
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- MongoDB Atlas account
+- Cloudinary account
+
+### Step 1: Clone Repository
+
+```bash
+git clone https://github.com/Uzairkahn/Multi-Vendor-Market-place.git
+cd Multi-Vendor-Market-place
+```
+
+### Step 2: Install Backend Dependencies
 
 ```bash
 cd backend
 npm install
 ```
 
-### Environment Variables
+### Step 3: Configure Environment Variables
 
-Create a file at:
-
-```bash
-backend/.env
-```
-
-Add the following values:
+Create a `backend/.env` file:
 
 ```env
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_jwt_secret_key
 PORT=5000
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
-### Start Backend Server
+### Step 4: Start Backend Server
 
 ```bash
 npm run dev
 ```
 
-Application runs at:
+The application will run at: **http://localhost:5000**
 
-```txt
-http://localhost:5000
-```
+> **Note:** Open the app through the Express server, not via `file:///`. The frontend relies on `/api/...` calls and needs the same origin.
 
-> Note: Open the app through the Express server, not via `file:///`. The frontend relies on `/api/...` calls and needs the same origin.
+---
 
-## Project Structure
-
-```
-FSWD-1-Marketplace
-│
-├── backend
-│   ├── config
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── server.js
-│
-├── frontend
-│   ├── assets
-│   ├── css
-│   ├── js
-│   ├── admin-dashboard.html
-│   ├── customer-dashboard.html
-│   ├── index.html
-│   ├── login.html
-│   ├── provider-dashboard.html
-│   ├── register.html
-│   ├── services.html
-│
-├── README.md
-└── .gitignore
-```
-
-## API Endpoints
+## �📡 API Endpoints
 
 ### Health
 
@@ -259,20 +322,55 @@ FSWD-1-Marketplace
 
 ✅ Role-Based Access Control Completed
 
-## Future Enhancements
+---
+
+## 📈 Future Enhancements
 
 - Real-time notifications and chat
 - Payment gateway integration
 - Advanced analytics and reporting
 - Service recommendation engine
 - Mobile-friendly PWA experience
+- Email notifications system
+- Multi-language support
 
-## Author
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 👨‍💼 Author
 
 **Uzair Khan**
 
-BS Computer Science Graduate
+- **Education**: BS Computer Science, Sukkur IBA University
+- **GitHub**: [https://github.com/Uzairkahn](https://github.com/Uzairkahn)
+- **LinkedIn**: [https://www.linkedin.com/in/uzair-khan-616048385/](https://www.linkedin.com/in/uzair-khan-616048385/)
 
-GitHub: [https://github.com/Uzairkahn](https://github.com/Uzairkahn)
+---
 
-LinkedIn: [https://www.linkedin.com/in/uzair-khan-616048385/](https://www.linkedin.com/in/uzair-khan-616048385/)
+## 📧 Support
+
+For questions or issues, please open an issue on GitHub or contact via LinkedIn.
+
+---
+
+## 🎉 Acknowledgments
+
+- Bootstrap 5 for responsive UI
+- Chart.js for analytics visualization
+- MongoDB Atlas for reliable database hosting
+- Cloudinary for image management
+- Render for seamless deployment
+
+---
+
+**Made with ❤️ by Uzair Khan**
