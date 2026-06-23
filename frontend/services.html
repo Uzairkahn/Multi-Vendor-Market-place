@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Services — MarketHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-white bg-white navbar-shadow sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4" href="index.html">MarketHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul id="mainNavLinks" class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center"></ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-6">
+  <div class="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-3 mb-5">
+    <div>
+      <span class="badge bg-primary bg-opacity-10 text-primary mb-3">Search & discover</span>
+      <h1 class="fw-bold">Discover services from top providers.</h1>
+      <p class="text-muted">Search, filter and choose services that fit your internship, study project, or freelance need.</p>
+    </div>
+    <div class="text-lg-end">
+      <a class="btn btn-outline-primary btn-lg" href="register.html">Become a Provider</a>
+    </div>
+  </div>
+
+  <div class="card card-search shadow-sm mb-4 p-4">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-6 col-lg-5">
+        <input id="search" type="search" class="form-control form-control-lg" placeholder="Search services...">
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <select id="category" class="form-select form-select-lg">
+          <option value="">All Categories</option>
+          <option>Web Development</option>
+          <option>Graphic Design</option>
+          <option>Content Writing</option>
+          <option>Digital Marketing</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-lg-2 d-grid">
+        <button id="btnSearch" class="btn btn-primary btn-lg">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="serviceStatus" class="mb-4"></div>
+
+  <div id="requestPanel" class="card shadow-sm mb-4 d-none rounded-4">
+    <div class="card-body p-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+          <h2 class="h5 mb-1">Submit Service Request</h2>
+          <p class="text-muted mb-0">Send your brief directly to the provider.</p>
+        </div>
+        <button id="closeRequestPanel" type="button" class="btn btn-outline-secondary btn-sm">Close</button>
+      </div>
+      <p id="selectedServiceTitle" class="text-muted mb-3"></p>
+      <div id="requestMessage"></div>
+      <form id="requestForm">
+        <input type="hidden" id="requestServiceId">
+        <div class="mb-3">
+          <label class="form-label">Requirements</label>
+          <textarea id="requestRequirements" class="form-control" rows="4" required placeholder="Describe exactly what you need"></textarea>
+        </div>
+        <div class="row gx-3">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Budget</label>
+            <input id="requestBudget" type="number" min="0" class="form-control" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Deadline</label>
+            <input id="requestDeadline" type="date" class="form-control">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="servicesRow" class="row gy-4"></div>
+</main>
+
+<footer class="footer py-5 bg-white border-top">
+  <div class="container text-center">
+    <p class="mb-1 fw-bold">MarketHub Services</p>
+    <p class="small text-muted mb-0">Search the best providers and submit requests with confidence.</p>
+  </div>
+</footer>
+
+<div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+<script src="js/session.js"></script>
+<script src="js/api.js"></script>
+<script src="js/services.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
